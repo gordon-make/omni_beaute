@@ -1,0 +1,14 @@
+# Price list stays local (not published)
+*.pdf
+
+# Design source files
+*.ai
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
