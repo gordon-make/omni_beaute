@@ -4,6 +4,11 @@
 # Design source files
 *.ai
 
+# Local originals not used by the website
+/logo.svg
+/logo.png
+/IG.jpeg
+
 # OS
 Thumbs.db
 Desktop.ini
