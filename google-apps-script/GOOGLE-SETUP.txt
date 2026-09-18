@@ -1,0 +1,44 @@
+Omni Beauté — Google Drive product sync (do this once)
+
+A. Google Drive
+1. Create a folder, e.g. OmniBeaute / products
+2. Put pairs only:
+     aqua-serum.jpg
+     aqua-serum.txt
+   Same name, photo + txt. Extensions: .jpg .jpeg .png + .txt
+3. Save txt as UTF-8. See example-product.txt
+4. Resize photos to about 1200–1600px wide before upload
+5. Copy the folder ID from the URL:
+     https://drive.google.com/drive/folders/THIS_IS_THE_ID
+   Keep this folder private. The website never reads Drive directly.
+
+B. Google Sheet + Apps Script (easier than a standalone script)
+1. Create a Google Sheet named OmniBeaute 產品同步
+2. Extensions → Apps Script
+3. Delete any default code. Paste Code.gs
+4. Project Settings (gear) → Script properties → Add:
+     DRIVE_FOLDER_ID   = (folder id from A5)
+     GITHUB_TOKEN      = (token from C)
+     GITHUB_REPO       = gordon-make/omni_beaute
+     GITHUB_BRANCH     = main
+     DRY_RUN           = true     (first tests only)
+5. Save. In the editor, choose previewDriveFolder → Run
+6. Grant Drive + external request permission when asked
+7. View → Logs and confirm photo/txt pairs
+8. Set DRY_RUN to false only when GitHub test is ready
+9. Run syncProductsToGitHub
+10. Optional: Triggers → Add trigger → syncProductsToGitHub → Time-driven → every 10 minutes
+    Do not turn this on until a manual sync looks correct.
+
+C. GitHub token (you create this; do not paste it into chat)
+1. GitHub → Settings → Developer settings → Personal access tokens
+2. Fine-grained token, only repo gordon-make/omni_beaute
+3. Permissions: Contents = Read and write
+4. Copy once into Script properties GITHUB_TOKEN
+
+D. Local website test (no Google yet)
+- Open the site with Live Server (not by double-clicking index.html)
+- Scroll to 產品. You should see the sample preview card.
+- fetch() of data/products.json fails on file://
+
+Do not git push until the preview card and (later) Drive pairing both look right.

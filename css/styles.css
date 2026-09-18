@@ -255,6 +255,7 @@ button,
 .intro,
 .services,
 .details,
+.products,
 .visit,
 .notes,
 .faq,
@@ -331,6 +332,131 @@ button,
   min-height: 40px;
   padding: 0 14px;
   font-size: 11px;
+}
+
+.product-price {
+  margin: 0 0 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+
+.product-chip {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.products .wrap {
+  overflow: visible;
+}
+
+.product-scroller {
+  position: relative;
+  margin-top: 32px;
+}
+
+.product-grid {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 2px 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+
+.product-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background: var(--line);
+}
+
+.product-grid .card {
+  flex: 0 0 min(300px, 78vw);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+}
+
+.product-grid .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-grid .card-body .btn {
+  margin-top: auto;
+}
+
+.product-nav {
+  position: absolute;
+  top: 118px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(61, 58, 56, 0.12);
+  border-radius: 50%;
+  background: rgba(250, 248, 246, 0.28);
+  color: rgba(61, 58, 56, 0.75);
+  cursor: pointer;
+  box-shadow: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateY(-50%);
+}
+
+.product-nav svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.product-nav-prev {
+  left: 10px;
+}
+
+.product-nav-next {
+  right: 10px;
+}
+
+.product-nav:hover,
+.product-nav:focus-visible {
+  background: rgba(250, 248, 246, 0.72);
+  color: var(--ink);
+}
+
+.product-scroller:has(.product-grid[data-status="loading"]) .product-nav,
+.product-scroller:has(.product-grid[data-status="empty"]) .product-nav,
+.product-scroller:has(.product-grid[data-status="error"]) .product-nav {
+  display: none;
+}
+
+.product-status {
+  flex: 0 0 100%;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.product-grid[data-status="loading"] .product-status,
+.product-grid[data-status="empty"] .product-status,
+.product-grid[data-status="error"] .product-status {
+  padding: 28px 0 8px;
 }
 
 .details-block + .details-block {
@@ -616,9 +742,20 @@ button,
       url("../assets/hero-studio.png") center / cover no-repeat;
   }
 
+  .product-nav-prev {
+    left: 8px;
+    transform: none;
+  }
+
+  .product-nav-next {
+    right: 8px;
+    transform: none;
+  }
+
   .intro,
   .services,
   .details,
+  .products,
   .visit,
   .notes,
   .faq,
