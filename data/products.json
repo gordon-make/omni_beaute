@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-09-18T07:34:17.688Z",
+  "updatedAt": "2026-09-18T07:43:22.515Z",
   "source": "google-drive",
   "products": [
     {
       "id": "CrystalMask",
       "name": "Crystal Mask Pack Kit",
-      "price": "$200",
+      "price": "$200/5pcs",
       "description": "sMTS幹細胞嬰兒針精華液高效美白，預防肌老化，再生健康肌膚細胞，活化有效成份，水晶針開僻管道，sMTS幹細胞嬰兒針精華液能通過微細管道滲入底層，將穿透底層的微分子物中的透明質酸、表皮生長因子幹細胞、PDRN成份溶解，並於皮膚底層釋放。\n\n功效:\n✔️肌理改善 ✔️修補受損肌膚\n✔️增強水份 ✔️白滑嫩肌\n✔️彈性飽滿 ✔️無皺細緻\n✔️零毛孔 ✔️去玫瑰痤瘡",
       "image": "assets/products/CrystalMask.png",
       "active": true
