@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T07:18:20.030Z",
+  "updatedAt": "2026-09-18T07:23:46.419Z",
   "source": "google-drive",
   "products": [
     {
@@ -8,6 +8,14 @@
       "price": "",
       "description": "✅幹細胞嬰兒針\t✅補水彈力收毛孔",
       "image": "assets/products/CrystalMask.png",
+      "active": true
+    },
+    {
+      "id": "Sma",
+      "name": "這是一個笑面",
+      "price": "",
+      "description": "this is the smiley face\n380$",
+      "image": "assets/products/Sma.png",
       "active": true
     }
   ]
